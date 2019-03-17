@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//打印a,b,c中最大数
+			var a = parseInt(window.prompt("请输入第一个数"));
+			var b = parseInt(window.prompt("请输入第二个数"));
+			var c = parseInt(window.prompt("请输入第三个数"));
+			printMax(a,b,c);
+			function printMax(a,b,c){
+				if(a <= b){
+					a = b;
+				}
+				if(a <= c){
+					a = c;
+				}
+				 document.write(a);
+			}
+		</script>
+	</body>
+</html>
