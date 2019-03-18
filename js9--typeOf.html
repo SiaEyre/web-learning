@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			console.log(typeof(a)); //==>undefined
+			console.log(typeof(undefined));//==>undefined
+			console.log(typeof(null));//object
+			console.log(typeof(NaN));//NaN
+			var a = "123abc";
+			console.log(typeof(++a));//number
+			console.log(typeof(!!a));//true
+			console.log(typeof(a + ""));//string
+			console.log(1 == "1");//true
+			console.log(NaN == NaN);//false
+			console.log(NaN == undefined);//false
+			console.log("11" + 11);//1111
+			console.log(1 === "1");//false
+			console.log(parseInt("123abc"));//123
+			var num = 123.23;
+			console.log(num.toFixed(3));//123.230
+			console.log(typeof(typeof(c)));	//string
+		</script>
+	</body>
+</html>

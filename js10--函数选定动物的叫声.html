@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function animalVoice(n){
+				switch(n){
+					case "dog":
+						document.write("汪汪汪");
+						break;
+					case "cat":
+						document.write("喵喵喵");
+						break;
+					case "sheep":
+						document.write("咩咩咩");
+						break;
+					case "cattle":
+						document.write("哞哞哞");
+						break;
+					default:
+						document.write("undfined");
+						break;
+				}
+			}
+			var animal = window.prompt("请输入动物名称");
+				animalVoice(animal);
+		</script>
+	</body>
+</html>

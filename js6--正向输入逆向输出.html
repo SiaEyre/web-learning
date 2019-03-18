@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//正向输入，反向输出。parseInt(n / m)==> n 除以 m 取整数部分去除小数部分
+			var n = parseInt(window.prompt("输入一个三位数"));
+			var a,b,c;
+			a = n % 10;//个位数
+			b = parseInt(n / 10) % 10; //十位数
+			c = parseInt(n / 100);//百位数
+			var num = a*100 + c + b * 10 ;
+			document.write("正向输入：" + n);
+			document.write("</br>");
+			document.write("逆向输出："+ num);
+		</script>
+	</body>
+</html>

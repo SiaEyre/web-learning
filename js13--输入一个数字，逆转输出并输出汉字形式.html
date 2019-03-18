@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			reverse();
+			function reverse(){
+				var num = window.prompt("input"),
+					str = "";
+				for(var i = num.length - 1;i >= 0; i --){
+					str += transfer(num[i]);
+					}
+				document.write(str);
+			}
+			function transfer(number){
+				switch(number){
+					case "1":
+						return "壹";
+					case "2":
+						return "贰";
+					case "3":
+						return "叁";
+					case "4":
+						return "四";
+					case "5":
+					 	return "五";
+					case "6":
+						return "六";
+					case "7":
+						return "七";
+					case "8":
+						return "八";
+					case "9":
+						return "九";
+					case "0":
+						return "零";
+				}
+			}
+		</script>
+	</body>
+</html>
