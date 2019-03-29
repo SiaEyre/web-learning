@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .wrapper {
+        width: 800px;
+        margin: 100px auto;
+        border: 1px soild #eff;
+
+    }
+
+    .wrapper button {
+        display: inline-block;
+        border: none;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        outline: none;
+        margin-top: 20px;
+        font-weight: bolder;
+        color: #333;
+        background-color: #eee;
+    }
+
+    .box li {
+        vertical-align: top;
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        border: 2px solid #ddd;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 50px;
+        margin: 5px;
+    }
+
+    .box li.select {
+        background-color: red;
+        color: #fff;
+        font-weight: bolder;
+
+    }
+
+    .wrapper .choice {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <ul class="box"></ul>
+        <button class="start">开始点击</button>
+        <button class="stop">停止</button>
+        <div class="choice">
+            <span>幸运儿：</span>
+            <span class="name"></span>
+        </div>
+    </div>
+    <script>
+        var arr = ["1", "2", "3", "4", "5", "58", "587", "6", "55", "56", "67", "88", "9"];
+        var str = "";
+        var boxol = document.getElementsByClassName("box")[0];
+        var oli = document.getElementsByTagName("li");
+        var start = document.getElementsByClassName("start")[0];
+        var stop = document.getElementsByClassName("stop")[0];
+        for (var i = 0; i < arr.length; i++) {
+            str += "<li>" + arr[i] + "</li>";
+        }
+        boxol.innerHTML = str;
+        var timer = null;
+        start.onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var i = Math.floor(Math.random() * arr.length);
+                for (var j = 0; j < arr.length; j++) {
+                    oli[j].className = " ";
+                }
+                    oli[i].className = "select"; 
+            }, 20);
+        };
+        stop.onclick = function () {
+            clearInterval(timer);
+            var choose = document.getElementsByClassName("select")[0];
+            var name = choose.innerHTML;
+            var nameSpan = document.getElementsByClassName("name")[0];
+            nameSpan.innerHTML = name;
+        };
+   
+
+    </script>
+</body>
+
+</html>
