@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        overflow: hidden;
+        /*不出现下拉框*/
+    }
+    #canvas{
+        background: black;
+    }
+</style>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        //获取画布对象
+        var canvas = document.getElementById("canvas");
+        //返回一个可以在画布上绘画的对象
+        var context = canvas.getContext("2d");
+        var H = window.innerHeight;
+        var W = window.innerWidth;
+        //设置画布对象的宽、高
+        canvas.width = W;
+        canvas.height = H;
+        var fontSize = 16;
+        //获取列数
+        var col = Math.floor(W / fontSize);
+        var str = "iloveu";
+        //存取y轴坐标
+        var drops = [];
+        for (var i = 0; i < col; i++) {
+            drops[i] = 1;
+        }
+        function draw() {
+            context.fillStyle = "rgba(0,0,0,0.05)";
+            context.fillRect(0, 0, W, H);
+            context.font = "700 " + fontSize + "px 微软雅黑";
+            context.fillStyle = "green";
+            for (var i = 0; i < col; i++){
+                var index = Math.floor(Math.random() * str.length);//随机获取字符串中一个字符
+                var x = i * fontSize;//改变起始的x
+                var y = drops[i] * fontSize;
+                context.fillText(str[index], x, y);
+                if (y >= H && Math.random() > 0.99) {//字符串掉出屏幕时，重置坐标
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+
+        };
+        draw();
+       setInterval(draw, 20);
+    </script>
+</body>
+
+</html>
