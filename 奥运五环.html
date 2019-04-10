@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .wrapper{
+        width: 150px;
+        height: 90px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -75px;
+        margin-top: -45px;     
+    }
+    .content1{
+        width: 150px;
+        height: 49px;
+        position: relative;
+    }
+    .content2{
+        width: 150px;
+        height: 49px;
+        position: relative;
+        top:-15px;
+    }
+    .content1 div,.content2 div{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        position: absolute;
+        display: inline-block;
+    }
+    .circle1{
+        border: 2px solid black;
+        left: 10px;
+
+    }
+    .circle2{
+        border: 2px solid red;
+        left: 50px;
+    }
+    .circle3{
+        border: 2px solid green;
+        left: 90px;
+    }
+    .circle4{
+        left: 30px;
+        border: 2px solid yellow;
+    }
+    .circle5{
+        left: 70px;
+        border: 2px solid blue;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+        <div class="content2">
+            <div class="circle4"></div>
+            <div class="circle5"></div>
+        </div>
+    </div>
+</body>
+</html>
