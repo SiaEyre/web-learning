@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 550px;
+            margin: 50px auto;
+        }
+
+        .wrapper .menu {
+            float: left;
+            width: 100px;
+            height: 30px;
+            background-color: rgb(123, 197, 123);
+            border-left:1px solid #fff; 
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .wrapper .menu .pulldown li {
+            margin: 0 auto;
+            width: 100px;
+            height: 30px;
+            background-color: rgb(136, 148, 136);
+            font-size: 15px;
+            text-align: center;
+            line-height: 30px;
+            display: none;
+        }
+        .wrapper .menu:hover .pulldown li{
+            display: inline-block;
+        }
+        .wrapper .menu .pulldown li:hover{
+            background-color: #666;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="menu">菜单1
+            <div class="pulldown">
+                <li>子菜单1</li>
+                <li>子菜单1</li>
+                <li>子菜单1</li>
+                <li>子菜单1</li>
+            </div>
+        </div>
+        <div class="menu">菜单2
+            <div class="pulldown">
+                <li>子菜单2</li>
+                <li>子菜单2</li>
+                <li>子菜单2</li>
+                <li>子菜单2</li>
+            </div>
+        </div>
+        <div class="menu">菜单3
+            <div class="pulldown">
+                <li>子菜单3</li>
+                <li>子菜单3</li>
+                <li>子菜单3</li>
+                <li>子菜单3</li>
+            </div>
+        </div>
+        <div class="menu">菜单4
+            <div class="pulldown">
+                <li>子菜单4</li>
+                <li>子菜单4</li>
+                <li>子菜单4</li>
+                <li>子菜单4</li>
+            </div>
+        </div>
+        <div class="menu">菜单5
+            <div class="pulldown">
+                <li>子菜单5</li>
+                <li>子菜单5</li>
+                <li>子菜单5</li>
+                <li>子菜单5</li>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
