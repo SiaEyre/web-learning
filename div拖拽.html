@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="position: absolute;left: 0; top: 0;"></div>
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+    
+        function drag(elem){
+            elem.onmousedown = function (e) {
+                var event = e || window.target;
+                var disX, disY;
+                disX = event.pageX - parseInt(elem.style.left);
+                disY = event.pageY - parseInt(elem.style.top);
+                console.log(disX);
+                document.onmousemove = function (e) {
+                    var event = e || window.target;
+                    elem.style.left = event.pageX - disX + "px";
+                    elem.style.top = event.pageY - disY + "px";
+                    console.log(elem.style.left);
+                }
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                }
+            }
+        }
+        drag(div);
+
+    </script>
+</body>
+
+</html>
