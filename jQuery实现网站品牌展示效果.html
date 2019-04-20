@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 300px;
+            border: 1px solid #333;
+            background-color: #dedede;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .wrapper li {
+            text-align: center;
+            line-height: 30px;
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 30px;
+            display: none;
+            margin-bottom: 30px;
+        }
+
+        .wrapper span {
+            width: 50px;
+            height: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            position: absolute;
+            left: 130px;
+            bottom: 5px;
+            cursor: pointer;
+        }
+
+        /* 当子元素使用了float:left/:right时，让父级元素高度被自己元素撑开的方法
+    1.触发父级元素bfc-->display:inline-block  float:left/right position:absolute overflow:hidden
+    2.clear：both-->在浮动元素之后 父级元素::after上添加 */
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <li>索尼</li>
+        <li>三星</li>
+        <li>尼康</li>
+        <li>oppo</li>
+        <li>vivo</li>
+        <li>小米</li>
+        <li>华为</li>
+        <li>佳能</li>
+        <li>蒂芙尼</li>
+        <li>Nike</li>
+        <li>puma</li>
+        <li>Adidas</li>
+        <li>converse</li>
+        <li>安踏</li>
+        <li>特步</li>
+        <li>鸿星尔克</li>
+        <li>新百伦</li>
+        <li>一纯</li>
+        <span>more</span>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $(".wrapper li:lt(9)").show();
+        var $btn = $(".wrapper span");
+        key = true;
+        $btn.click(function () {
+            if (key) {
+                $(".wrapper li:gt(9)").show();
+                $btn.text("less");
+                key = false;
+            } else {
+                $(".wrapper li:gt(9)").hide();
+                $btn.text("more");
+                key = true;
+            }
+        })
+    </script>
+</body>
+
+</html>
